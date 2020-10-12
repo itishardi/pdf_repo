@@ -13,6 +13,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Deploy
+      - name: show files
+        run: |
+            ls
+        env:
+            CI: true
       - name: ssh deploy
         uses: easingthemes/ssh-deploy@v2.1.4
         env:
