@@ -13,17 +13,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Deploy
-      - name: show files
-        run: |
-            ls
-        env:
-            CI: true
       - name: ssh deploy
         uses: easingthemes/ssh-deploy@v2.1.4
         env:
           SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
           ARGS: "-rltgoDzvO --delete"
-          SOURCE: ""
+          SOURCE: "web/"
           REMOTE_HOST: "121.196.40.246"
           REMOTE_USER: "root"
           TARGET: "/usr/share/nginx/pdfjshtml/"
