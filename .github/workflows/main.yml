@@ -26,11 +26,11 @@ jobs:
         node-version: 10
     # Deploy
     - name: ssh deploy
-    uses: easingthemes/ssh-deploy@v2.1.4
-    env:
-        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
-        ARGS: "-rltgoDzvO --delete"
-        SOURCE: "web/"
-        REMOTE_HOST: "121.196.40.246"
-        REMOTE_USER: "root"
-        TARGET: "/usr/share/nginx/pdfjshtml/"
+      uses: easingthemes/ssh-deploy@v2.1.4
+      env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+          ARGS: "-rltgoDzvO --delete"
+          SOURCE: "web/"
+          REMOTE_HOST: "121.196.40.246"
+          REMOTE_USER: "root"
+          TARGET: "/usr/share/nginx/pdfjshtml/"
